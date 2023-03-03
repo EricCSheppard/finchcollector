@@ -4,7 +4,10 @@
     <h4>Are you sure you want to delete <span class="">{{ object.name }}</span></h4>
     <form action="" method="POST">
         {% csrf_token %}
-        <input type="submit" value="Yes - Delete!" class="btn">
-        <a href="{% url 'detail' finch.id %}">Cancel</a>
+        <div class="buttons has-addons">
+            <input type="submit" value="Yes - Delete!" class="button">
+            <a href="{% url 'detail' finch.id %}" class="button">Cancel</a>
+          </div>
+        
     </form>
 {% endblock %}

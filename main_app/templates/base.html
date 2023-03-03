@@ -1,37 +1,65 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Finch Collector</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-    <header class="navbar-fixed">
-        <nav> 
-            <div class="nav-wrapper">
-                <ul>
-                    <li>
-                        <a href="/" class="left brand-logo">&nbsp;&nbsp;Finch Collectr</a>
-                    </li>
-                </ul>
-                <ul class="right">
-                    <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="{% url 'finch_create' %}">Add a Finch</a></li>
-                    <li><a href="{% url 'index' %}">View all my finches</a></li>
-                </ul>
+    <header class="">
+        <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <strong>Finch Collectr</strong>
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="{% url 'index' %}">
+                        View All Finches
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            More Finchy Goodness
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a href="{% url 'about' %}" class="navbar-item">
+                                About
+                            </a>
+                            <a href="{% url 'finch_create' %}" class="navbar-item">
+                                Add a Finch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
-    <main class="container">
+    <main class="container is-fluid m-2 content">
         {% block content %}
         {% endblock %}
     </main>
-    <footer class="page-footer">
-        <div class="right">All rights reserved, &copy; 2023 Finch Collector &nbsp;</div>
+    <footer class="footer">
+        <div class="">All rights reserved, &copy; 2023 Finch Collector &nbsp;</div>
     </footer>
 </body>
+
 </html>

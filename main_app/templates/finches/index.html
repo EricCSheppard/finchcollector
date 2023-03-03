@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Finch list:</h1>
+    <div class="columns">
     {% for finch in finches %}
-        <div class="card">
-            
-            <div class="card-content">
-                <span class="card-title">{{ finch.common_name }}</span>
-                <p>Genus: {{ finch.genus }}</p>
-                <p>Scientific Name: {{ finch.scientific_name }}</p>
-                <p>Distribution: {{ finch.distribution }}</p>
-                <a href="{% url 'detail' finch.id %}">View {{ finch.common_name }} details</a>
+        <div class="column">
+            <div class="card m-3 is-narrow">
+                <header class="card-header">
+                    <span class="card-header-title">{{ finch.common_name }}</span>
+                </header>
+                <div class="card-content">
+                    
+                    <p>Genus: {{ finch.genus }}</p>
+                    <p>Scientific Name: {{ finch.scientific_name }}</p>
+                    <p>Distribution: {{ finch.distribution }}</p>
+                </div>
+                <footer class="card-footer">
+                    <a href="{% url 'detail' finch.id %}" class="card-footer-item">View {{ finch.common_name }} details</a>
+                </footer>
             </div>
         </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
+    
 {% endblock %}

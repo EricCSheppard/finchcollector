@@ -5,14 +5,11 @@
     {% else %}
         <h1>Add Finch</h1>
     {% endif %}
-    <!-- by leaving the action empty, this allows the form to submit to the same URL that was used to render it (the submit changes the HTTP to POST) -->
     <form action="" method="POST">
-        <!-- Django requires our cross-site resource token -->
         {% csrf_token %}
         <table>
-            <!-- render the inputs inside of a table with <tr>s and <td>s -->
                 {{ form.as_table }}
         </table>
-        <input type="submit" value="Submit!" class="btn">
+        <input type="submit" value="Submit" class="button">
     </form>
 {% endblock %}
