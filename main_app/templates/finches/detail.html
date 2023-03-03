@@ -10,6 +10,10 @@
         <p>Distribution: {{ finch.distribution }}</p>
         <img src="{{ finch.img_url }}" height="300px"/>
     </div>
+    <div class="card-action">
+        <a href="{% url 'finch_update' finch.id %}">Edit</a>
+        <a href="{% url 'finch_delete' finch.id %}">Delete</a>
+    </div>
 </div>
 
 {% endblock %}
