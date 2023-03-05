@@ -29,19 +29,25 @@
 
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
+                    <a href="{% url 'about' %}" class="navbar-item">
+                        About
+                    </a>
                     <a class="navbar-item" href="{% url 'index' %}">
                         View All Finches
                     </a>
+                    <a href="{% url 'finch_create' %}" class="navbar-item">
+                        Add a Finch
+                    </a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
-                            More Finchy Goodness
+                            Tags
                         </a>
                         <div class="navbar-dropdown">
-                            <a href="{% url 'about' %}" class="navbar-item">
-                                About
+                            <a href="{% url 'tags_create' %}" class="navbar-item">
+                                Add a Tag
                             </a>
-                            <a href="{% url 'finch_create' %}" class="navbar-item">
-                                Add a Finch
+                            <a href="{% url 'tags_index' %}" class="navbar-item">
+                                View all Tags
                             </a>
                         </div>
                     </div>

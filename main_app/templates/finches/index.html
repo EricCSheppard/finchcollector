@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Finch list:</h1>
-    <div class="columns">
+    <div class="columns is-multiline">
     {% for finch in finches %}
-        <div class="column">
-            <div class="card m-3 is-narrow">
+        <div class="column is-one-quarter">
+            <div class="card m-1">
                 <header class="card-header">
                     <span class="card-header-title">{{ finch.common_name }}</span>
                 </header>
+                <div class="card-image">
+                    <figure class="image">
+                        <img src="{{ finch.img_url }}" alt="Placeholder image">
+                    </figure>
+                </div>
                 <div class="card-content">
-                    
-                    <p>Genus: {{ finch.genus }}</p>
-                    <p>Scientific Name: {{ finch.scientific_name }}</p>
-                    <p>Distribution: {{ finch.distribution }}</p>
+                    <p><strong>Genus:</strong> {{ finch.genus }}</p>
+                    <p><strong>Scientific Name:</strong> {{ finch.scientific_name }}</p>
                 </div>
                 <footer class="card-footer">
                     <a href="{% url 'detail' finch.id %}" class="card-footer-item">View {{ finch.common_name }} details</a>
