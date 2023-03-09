@@ -24,7 +24,7 @@ class Finch(models.Model):
     common_name = models.CharField(max_length=100)
     distribution = models.TextField(max_length=250)
     img_url = models.TextField(max_length=250)
-    tag = models.ManyToManyField(Tag)
+    tag = models.ManyToManyField(Tag, blank=True)
 
     # def recent_sighting(self):
     #     return self.sighting_set.filter(date = date.today()).count()
