@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Tag Details</h1>
+    <div class="card" style="width: 40rem;">
+        <header class="card-header" >
+            <span class="card-header-title">A {{ tag.color }} Tag</span>
+        </header>
+        <div class="card-content" style="background-color: {{tag.color}};"></div>
+        <footer class="card-footer">
+            <a href="{% url 'tag_update' tag.id %}" class="card-footer-item">Edit</a>
+            <a href="{% url 'tag_delete' tag.id %}" class="card-footer-item">Delete</a>
+        </footer>
+    </div>
+{% endblock %}
