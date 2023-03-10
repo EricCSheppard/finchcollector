@@ -64,11 +64,11 @@ def unassoc_tag(request, finch_id, tag_id):
 
 class TagList(ListView):
     model = Tag
-    template_name = '/tags/index.html'
+    template_name = 'tags/index.html'
 
 class TagDetail(DetailView):
     model = Tag
-    template_name = '/tags/detail.html'
+    template_name = 'tags/detail.html'
 
 class TagCreate(CreateView):
     model = Tag
